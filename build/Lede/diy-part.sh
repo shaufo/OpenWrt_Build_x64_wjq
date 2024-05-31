@@ -8,11 +8,11 @@
 git clone -b bypass https://github.com/shidahuilang/openwrt-package.git package/luci-app-bypass
 
 #添加CPU使用率、编译作者、固件下载地址
-sed -i '/<tr><td width="33%"><%:CPU usage/a <tr><td width="33%"><%:Compiler author%></td><td><a target="_blank" href="https://wp.gxnas.com">【GXNAS博客】https://wp.gxnas.com</a></td></tr>' package/lean/autocore/files/x86/index.htm
+sed -i '/<tr><td width="33%"><%:CPU usage/a <tr><td width="33%"><%:Compiler author%></td><td><a target="_blank" href="https://github.com/shaufo/">【SHAUFO】https://github.com/shaufo/</a></td></tr>' package/lean/autocore/files/x86/index.htm
 sed -i '5a\msgid "Compiler author"' feeds/luci/modules/luci-base/po/zh-cn/base.po
 sed -i '6a\msgstr "固件编译者"' feeds/luci/modules/luci-base/po/zh-cn/base.po
 sed -i '7a \\' feeds/luci/modules/luci-base/po/zh-cn/base.po
-sed -i '/<tr><td width="33%"><%:Compiler author/a <tr><td width="33%"><%:Firmware Update%></td><td><a target="_blank" href="https://d.gxnas.com/GXNAS%E7%BD%91%E7%9B%98-OneDrive/OpenWrt_x64%EF%BC%88%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%B3%BB%E7%BB%9F_64%E4%BD%8D%EF%BC%89">点这里下载最新版本</a></td></tr>' package/lean/autocore/files/x86/index.htm
+sed -i '/<tr><td width="33%"><%:Compiler author/a <tr><td width="33%"><%:Firmware Update%></td><td><a target="_blank" href="https://github.com/shaufo/OpenWrt_Build_x64_wjq/releases/tag/Update-x86">点这里下载最新版本</a></td></tr>' package/lean/autocore/files/x86/index.htm
 
 #添加汉化
 sed -i '8a\msgid "Firmware Update"' feeds/luci/modules/luci-base/po/zh-cn/base.po
@@ -22,7 +22,7 @@ sed -i '10a \\' feeds/luci/modules/luci-base/po/zh-cn/base.po
 # 后台IP设置
 export Ipv4_ipaddr="192.168.1.1"             # 修改openwrt后台地址(填0为关闭)
 export Netmask_netm="255.255.255.0"          # IPv4 子网掩码（默认：255.255.255.0）(填0为不作修改)
-export Op_name="OpenWrt-GXNAS"               # 修改主机名称为OpenWrt-123(填0为不作修改)
+export Op_name="OpenWrt-Zhuluyou"               # 修改主机名称为OpenWrt-123(填0为不作修改)
 
 # 内核和系统分区大小(不是每个机型都可用)
 export Kernel_partition_size="32"            # 内核分区大小,每个机型默认值不一样 (填写您想要的数值,默认一般16,数值以MB计算，填0为不作修改),如果你不懂就填0
@@ -52,7 +52,7 @@ export OpenClash_branch="0"                  # OpenClash的源码分别有【mas
 export OpenClash_Core="2"                    # 增加OpenClash时,把核心下载好,(填1为下载【dev单核】,填2为下载【dev/meta/premium三核】,填0为不需要核心)
 
 # 个性签名,默认增加年月日[$(TZ=UTC-8 date "+%Y.%m.%d")]
-export Customized_Information="OpenWrt_x64_主路由版 by GXNAS build $(TZ=UTC-8 date "+%Y.%m.%d")"  # 个性签名,你想写啥就写啥，(填0为不作修改)
+export Customized_Information="OpenWrt_x64_主路由版 by Shaufo build $(TZ=UTC-8 date "+%Y.%m.%d")"  # 个性签名,你想写啥就写啥，(填0为不作修改)
 
 # 更换固件内核
 #export Replace_Kernel="6.1"                  # 更换内核版本,在对应源码的[target/linux/架构]查看patches-x.x,看看x.x有啥就有啥内核了(填入内核x.x版本号,填0为不作修改)
